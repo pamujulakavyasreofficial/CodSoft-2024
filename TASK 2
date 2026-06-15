@@ -29,7 +29,6 @@ public class GradeCalculator {
         char grade = calculateGrade(averagePercentage);
         System.out.println("Grade: " + grade);
     }
-
     private static char calculateGrade(double averagePercentage) {
         if (averagePercentage >= 90) {
             return 'A';
