@@ -11,7 +11,6 @@ public class NumberGame {
         int minRange = 1, maxRange = 100, maxAttempts = 5, rounds = 0, totalAttempts = 0;
 
         System.out.println("Welcome to the Number Game!");
-
         do {
             int targetNumber = random.nextInt(maxRange - minRange + 1) + minRange, attempts = 0;
 
