@@ -1,38 +1,28 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
-
-    static double getRate(String from, String to) {
-
-        if (from.equals("USD") && to.equals("INR")) return 83.5;
-        if (from.equals("INR") && to.equals("USD")) return 0.012;
-        if (from.equals("USD") && to.equals("EUR")) return 0.92;
-        if (from.equals("EUR") && to.equals("USD")) return 1.09;
-        if (from.equals("USD") && to.equals("GBP")) return 0.79;
-        if (from.equals("GBP") && to.equals("USD")) return 1.27;
-
-        return 1; // same currency
-    }
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Currencies: USD, INR, EUR, GBP");
+        String[] c = {"USD","INR","EUR","GBP"};
+        double[][] r = {
+            {1,83.5,0.92,0.79},
+            {0.012,1,0.011,0.0095},
+            {1.09,90.8,1,0.86},
+            {1.27,105.5,1.16,1}
+        };
 
-        System.out.print("Enter Base Currency: ");
-        String from = sc.next().toUpperCase();
+        System.out.println("0-USD 1-INR 2-EUR 3-GBP");
+        System.out.print("From: ");
+        int from = sc.nextInt();
 
-        System.out.print("Enter Target Currency: ");
-        String to = sc.next().toUpperCase();
+        System.out.print("To: ");
+        int to = sc.nextInt();
 
-        System.out.print("Enter Amount: ");
-        double amount = sc.nextDouble();
+        System.out.print("Amount: ");
+        double amt = sc.nextDouble();
 
-        double result = amount * getRate(from, to);
-
-        System.out.printf("Converted Amount: %.2f %s", result, to);
-
-        sc.close();
+        System.out.printf("Converted Amount = %.2f %s",
+                amt * r[from][to], c[to]);
     }
 }
