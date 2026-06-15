@@ -15,7 +15,6 @@ public class QuizApplication {
         initializeQuestions();
         startQuiz();
     }
-
     private static void initializeQuestions() {
         questions = new ArrayList<>();
 
